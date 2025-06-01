@@ -19,7 +19,7 @@ const maxNumberOfAttempts = 5;
 // > getRandomNumber(1, 50)
 // <- 11
 function getRandomNumber(min, max) {
-  return Math.floor(Math.random(min, max - 1) * (max - min)) + min;
+  return parseInt(Math.floor(Math.random(min, max - 1) * (max - min)) + min);
 }
 
 function setup() {
@@ -48,7 +48,7 @@ function checkGuess() {
   if (guess == targetNumber) {
     numberOfGuessesMessage.style.display = 'block';
     numberOfGuessesMessage.innerHTML = `You made ${attempts} guesses`;
-
+    
     correctMessage.style.display = 'block';
 
     submitButton.disabled = true;
@@ -64,7 +64,7 @@ function checkGuess() {
 
     const remainingAttempts = maxNumberOfAttempts - attempts;
 
-    numberOfGuessesMessage.style.display = '';
+    numberOfGuessesMessage.style.display = 'block';
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
   }
 
@@ -75,7 +75,7 @@ function checkGuess() {
 
   guessInput.value = '';
 
-  resetButton.style.display = '';
+  resetButton.style.display = 'none';
 }
 
 function hideAllMessages() {
