@@ -52,7 +52,7 @@ function checkGuess() {
   if (guess < 1 || guess > 99) { alert('Wrong number submitted! Acceptible one should be between 1 and 99'); } else {
   attempts = attempts + 1;
 
-  //hideAllMessages();
+  hideAllMessages();
    
   if (guess == targetNumber) {
     numberOfGuessesMessage.style.display = 'block';
@@ -87,5 +87,5 @@ function checkGuess() {
   guessInput.value = '';
 }
 
-submitButton.addEventListener('click', checkGuess());
-resetButton.addEventListener('click', setup());
+submitButton.addEventListener('click', checkGuess);
+resetButton.addEventListener('click', setup);
