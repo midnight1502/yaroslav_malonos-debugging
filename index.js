@@ -87,5 +87,5 @@ function hideAllMessages() {
 
 setup();
 
-submitButton.addEventListener('click', checkGuess);
-resetButton.addEventListener('click', setup);
+submitButton.addEventListener('click', checkGuess());
+resetButton.addEventListener('click', setup());
