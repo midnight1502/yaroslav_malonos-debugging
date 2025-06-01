@@ -41,9 +41,10 @@ function setup() {
 function checkGuess() {
   // Get value from guess input element
   const guess = parseInt(guessInput.value, 10);
+  if (guess < 1 || guess > 99) { alert('Wrong number submitted! Acceptible one should be between 1 and 99'); } else {
   attempts = attempts + 1;
 
-  hideAllMessages();
+  //hideAllMessages();
 
   if (guess == targetNumber) {
     numberOfGuessesMessage.style.display = 'block';
@@ -66,6 +67,7 @@ function checkGuess() {
 
     numberOfGuessesMessage.style.display = 'block';
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
+  }
   }
 
   if (attempts == maxNumberOfAttempts) {
