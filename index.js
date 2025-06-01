@@ -78,7 +78,7 @@ function checkGuess() {
 
   guessInput.value = '';
 
-  resetButton.style.display = 'none';
+  //resetButton.style.display = 'none';
 }
 
 function hideAllMessages() {
