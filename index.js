@@ -12,7 +12,21 @@ let targetNumber;
 let attempts = 0;
 const maxNumberOfAttempts = 5;
 
-setup();
+function setup() {
+  // Get random number
+  targetNumber = getRandomNumber(1, 100);
+  console.log(`target number: ${targetNumber}`);
+
+  // Reset number of attempts
+  maxNumberOfAttempts = 0;
+
+  // Enable the input and submit button
+  submitButton.disabeld = false;
+  guessInput.disabled = false;
+
+  hideAllMessages();
+  resetButton.style.display = 'none';
+}
 
 // Returns a random number from min (inclusive) to max (exclusive)
 // Usage:
@@ -70,21 +84,7 @@ function hideAllMessages() {
   }
 }
 
-funtion setup() {
-  // Get random number
-  targetNumber = getRandomNumber(1, 100);
-  console.log(`target number: ${targetNumber}`);
-
-  // Reset number of attempts
-  maxNumberOfAttempts = 0;
-
-  // Enable the input and submit button
-  submitButton.disabeld = false;
-  guessInput.disabled = false;
-
-  hideAllMessages();
-  resetButton.style.display = 'none';
-}
+setup();
 
 submitButton.addEventListener('click', checkGuess);
 resetButton.addEventListener('click', setup);
