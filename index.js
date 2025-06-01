@@ -12,6 +12,8 @@ let targetNumber;
 let attempts = 0;
 const maxNumberOfAttempts = 5;
 
+setup();
+
 // Returns a random number from min (inclusive) to max (exclusive)
 // Usage:
 // > getRandomNumber(1, 50)
@@ -52,7 +54,7 @@ function checkGuess() {
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
   }
 
-  if (attempts ==== maxNumberOfAttempts) {
+  if (attempts === maxNumberOfAttempts) {
     submitButton.disabled = true;
     guessInput.disabled = true;
   }
@@ -86,5 +88,3 @@ funtion setup() {
 
 submitButton.addEventListener('click', checkGuess);
 resetButton.addEventListener('click', setup);
-
-setup();
