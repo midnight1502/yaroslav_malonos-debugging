@@ -31,11 +31,11 @@ function checkGuess() {
 
   hideAllMessages();
 
-  if (guess === targetNumber) {
-    numberOfGuessesMessage.style.display = '';
+  if (guess == targetNumber) {
+    numberOfGuessesMessage.style.display = 'block';
     numberOfGuessesMessage.innerHTML = `You made ${attempts} guesses`;
 
-    correctMessage.style.display = '';
+    correctMessage.style.display = 'block';
 
     submitButton.disabled = true;
     guessInput.disabled = true;
@@ -43,9 +43,9 @@ function checkGuess() {
 
   if (guess !== targetNumber) {
     if (guess < targetNumber) {
-      tooLowMessage.style.display = '';
+      tooLowMessage.style.display = 'block';
     } else {
-      tooLowMessage.style.display = '';
+      tooHighMessage.style.display = 'block';
     }
 
     const remainingAttempts = maxNumberOfAttempts - attempts;
@@ -54,7 +54,7 @@ function checkGuess() {
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
   }
 
-  if (attempts === maxNumberOfAttempts) {
+  if (attempts == maxNumberOfAttempts) {
     submitButton.disabled = true;
     guessInput.disabled = true;
   }
