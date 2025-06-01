@@ -14,7 +14,4 @@ main {
   margin: 20px;
 }
 
-#number-of-guesses, #too-high, #too-low, #max-guesses, #correct, #reset {
-  display: none;
-}
 
