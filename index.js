@@ -44,7 +44,6 @@ function setup() {
   resetButton.style.display = 'none';
 }
 
-setup();
 
 function checkGuess() {
   // Get value from guess input element
@@ -89,3 +88,5 @@ function checkGuess() {
 
 submitButton.addEventListener('click', checkGuess);
 resetButton.addEventListener('click', setup);
+
+setup();
