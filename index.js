@@ -19,19 +19,19 @@ const maxNumberOfAttempts = 5;
 // > getRandomNumber(1, 50)
 // <- 11
 function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random(min, max - 1) * (max - min)) + min;
 }
 
 function setup() {
   // Get random number
-  targetNumber = getRandomNumber(1, 100);
+  targetNumber = getRandomNumber(1, 98);
   console.log(`target number: ${targetNumber}`);
 
   // Reset number of attempts
-  maxNumberOfAttempts = 0;
+  attempts = 0;
 
   // Enable the input and submit button
-  submitButton.disabeld = false;
+  submitButton.disabled = false;
   guessInput.disabled = false;
 
   hideAllMessages();
