@@ -38,6 +38,8 @@ function setup() {
   resetButton.style.display = 'none';
 }
 
+setup();
+
 function checkGuess() {
   // Get value from guess input element
   const guess = parseInt(guessInput.value, 10);
@@ -87,5 +89,3 @@ function hideAllMessages() {
 
 submitButton.addEventListener('click', checkGuess());
 resetButton.addEventListener('click', setup());
-
-setup();
