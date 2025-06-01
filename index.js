@@ -12,6 +12,8 @@ let targetNumber;
 let attempts = 0;
 const maxNumberOfAttempts = 5;
 
+resetButton.style.display = 'none';
+
 // Returns a random number from min (inclusive) to max (exclusive)
 // Usage:
 // > getRandomNumber(1, 50)
@@ -41,17 +43,15 @@ function setup() {
   guessInput.disabled = false;
 
   hideAllMessages();
-  resetButton.style.display = 'none';
 }
 
 
 function checkGuess() {
   // Get value from guess input element
+  
   const guess = parseInt(guessInput.value, 10);
   if (guess < 1 || guess > 99) { alert('Wrong number submitted! Acceptible one should be between 1 and 99'); } else {
   attempts = attempts + 1;
-
-  //hideAllMessages();
    
   if (guess == targetNumber) {
     numberOfGuessesMessage.style.display = 'block';
@@ -66,7 +66,9 @@ function checkGuess() {
   if (guess != targetNumber) {
     if (guess < targetNumber) {
       tooLowMessage.style.display = 'block';
+      tooHighMessage.style.display = 'none';
     } else {
+      tooLowMessage.style.display = 'none';
       tooHighMessage.style.display = 'block';
     }
 
