@@ -22,6 +22,12 @@ function getRandomNumber(min, max) {
   return parseInt(Math.floor(Math.random(min, max - 1) * (max - min)) + min);
 }
 
+function hideAllMessages() {
+  for (let elementIndex = 0; elementIndex <= messages.length; elementIndex++) {
+    messages[elementIndex].style.display = 'none';
+  }
+}
+
 function setup() {
   // Get random number
   targetNumber = getRandomNumber(1, 99);
@@ -79,12 +85,6 @@ function checkGuess() {
   }
 
   guessInput.value = '';
-}
-
-function hideAllMessages() {
-  for (let elementIndex = 0; elementIndex <= messages.length; elementIndex++) {
-    messages[elementIndex].style.display = 'none';
-  }
 }
 
 submitButton.addEventListener('click', checkGuess());
