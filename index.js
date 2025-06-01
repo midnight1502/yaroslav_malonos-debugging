@@ -12,6 +12,16 @@ let targetNumber;
 let attempts = 0;
 const maxNumberOfAttempts = 5;
 
+// Returns a random number from min (inclusive) to max (exclusive)
+// Usage:
+// > getRandomNumber(1, 50)
+// <- 32
+// > getRandomNumber(1, 50)
+// <- 11
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 function setup() {
   // Get random number
   targetNumber = getRandomNumber(1, 100);
@@ -26,16 +36,6 @@ function setup() {
 
   hideAllMessages();
   resetButton.style.display = 'none';
-}
-
-// Returns a random number from min (inclusive) to max (exclusive)
-// Usage:
-// > getRandomNumber(1, 50)
-// <- 32
-// > getRandomNumber(1, 50)
-// <- 11
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function checkGuess() {
