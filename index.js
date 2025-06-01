@@ -55,7 +55,7 @@ function checkGuess() {
     guessInput.disabled = true;
   }
 
-  if (guess !== targetNumber) {
+  if (guess != targetNumber) {
     if (guess < targetNumber) {
       tooLowMessage.style.display = 'block';
     } else {
@@ -71,6 +71,7 @@ function checkGuess() {
   if (attempts == maxNumberOfAttempts) {
     submitButton.disabled = true;
     guessInput.disabled = true;
+    resetButton.style.display = 'block';
   }
 
   guessInput.value = '';
