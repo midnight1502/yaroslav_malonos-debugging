@@ -45,10 +45,10 @@ function checkGuess() {
   attempts = attempts + 1;
 
   //hideAllMessages();
-
+   
   if (guess == targetNumber) {
     numberOfGuessesMessage.style.display = 'block';
-    numberOfGuessesMessage.innerHTML = `You made ${attempts} guesses`;
+    numberOfGuessesMessage.innerHTML = `You made ${attempts} guess${attempts == 1 ? '' : 'es'}`;
     
     correctMessage.style.display = 'block';
 
@@ -66,7 +66,7 @@ function checkGuess() {
     const remainingAttempts = maxNumberOfAttempts - attempts;
 
     numberOfGuessesMessage.style.display = 'block';
-    numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
+    numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guess${remainingAttempts == 1 ? '' : 'es'} remaining`;
   }
   }
 
